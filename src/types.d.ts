@@ -1,4 +1,4 @@
-type generatedContentName =
+type wordContentName =
   | 'wordDescription'
   | 'popCulture'
   | 'epistemology'

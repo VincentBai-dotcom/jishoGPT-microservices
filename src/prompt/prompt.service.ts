@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { systemPrompts } from './systemPrompts';
 @Injectable()
 export class PromptService {
-  getSystemPrompt(promptName: generatedContentName): string {
+  getSystemPrompt(promptName: wordContentName): string {
     return systemPrompts[promptName];
   }
 
@@ -12,5 +12,22 @@ export class PromptService {
     definition: string,
   ): string {
     return `${word}, pronounced as ${pronunciation}, with definition \"${definition}\"`;
+  }
+
+  promptsFormater(systemPrompts: string[], userPrompts: string[]) {
+    return [
+      ...systemPrompts.map((systemPrompt) => {
+        return {
+          role: 'system',
+          content: systemPrompt,
+        };
+      }),
+      ...userPrompts.map((userPrompt) => {
+        return {
+          role: 'user',
+          content: userPrompt,
+        };
+      }),
+    ];
   }
 }

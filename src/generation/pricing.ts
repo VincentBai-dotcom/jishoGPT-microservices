@@ -1,10 +1,13 @@
-export const pricing: Record<model, Record<'input' | 'output', number>> = {
+export const pricing: Record<
+  model,
+  Record<'inputCost' | 'outputCost', number>
+> = {
   'gpt-4-1106-preview': {
-    input: 0.01,
-    output: 0.03,
+    inputCost: 0.01,
+    outputCost: 0.03,
   },
   'gpt-3.5-turbo-1106': {
-    input: 0.001,
-    output: 0.002,
+    inputCost: 0.001,
+    outputCost: 0.002,
   },
 };
