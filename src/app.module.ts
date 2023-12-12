@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { OpenaiServiceModule } from './openai-service/openai-service.module';
+import { OpenaiModule } from './openai/openai.module';
 
 @Module({
-  imports: [OpenaiServiceModule, ConfigModule.forRoot()],
+  imports: [OpenaiModule, ConfigModule.forRoot()],
   controllers: [],
   providers: [],
 })

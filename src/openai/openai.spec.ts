@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { OpenaiServiceController } from './openai-service.controller';
+import { OpenaiServiceController } from './openai.controller';
 
 describe('OpenaiServiceController', () => {
   let controller: OpenaiServiceController;

@@ -8,8 +8,8 @@ import {
 import { GenerationService } from './generation/generation.service';
 import { PromptService } from './prompt/prompt.service';
 
-@Controller('openai-service')
-export class OpenaiServiceController {
+@Controller('openai')
+export class OpenaiController {
   constructor(
     private generationSerivce: GenerationService,
     private promptService: PromptService,
