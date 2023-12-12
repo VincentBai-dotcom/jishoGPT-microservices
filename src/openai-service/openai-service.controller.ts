@@ -5,11 +5,11 @@ import {
   HttpStatus,
   Post,
 } from '@nestjs/common';
-import { PromptService } from 'src/prompt/prompt.service';
-import { GenerationService } from './generation.service';
+import { GenerationService } from './generation/generation.service';
+import { PromptService } from './prompt/prompt.service';
 
-@Controller('generation')
-export class GenerationController {
+@Controller('openai-service')
+export class OpenaiServiceController {
   constructor(
     private generationSerivce: GenerationService,
     private promptService: PromptService,
