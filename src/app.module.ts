@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { GenerationModule } from './generation/generation.module';
-import { GenerationController } from './generation/generation.controller';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [GenerationModule],
-  controllers: [GenerationController],
+  imports: [GenerationModule, ConfigModule.forRoot()],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}

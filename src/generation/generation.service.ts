@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { pricing } from './pricing';
 import OpenAI from 'openai';
 import { wordContentGenerationOptions } from './wordContentGenerationOptions';
+
 @Injectable()
 export class GenerationService {
   openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });

@@ -6,6 +6,6 @@ import { GenerationController } from './generation.controller';
 @Module({
   imports: [GenerationModule],
   controllers: [GenerationController],
-  providers: [PromptService, GenerationService],
+  providers: [GenerationService, PromptService],
 })
 export class GenerationModule {}
