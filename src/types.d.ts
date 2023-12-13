@@ -1,5 +1,5 @@
 type wordContentName =
-  | 'wordDescription'
+  | 'description'
   | 'popCulture'
   | 'epistemology'
   | 'synonym'

@@ -2,7 +2,7 @@ export const wordContentGenerationOptions: Record<
   wordContentName,
   Record<'temperature' | 'max_tokens', number>
 > = {
-  wordDescription: {
+  description: {
     temperature: 0.2,
     max_tokens: 140,
   },

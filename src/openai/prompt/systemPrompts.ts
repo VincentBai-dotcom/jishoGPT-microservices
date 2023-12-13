@@ -1,5 +1,5 @@
 export const systemPrompts: Record<wordContentName, string> = {
-  wordDescription:
+  description:
     'You are a translator from Japanese to English. Given a Japanese word, give a simple description of its meaning in English in 2 or 3 sentences',
 
   popCulture:
