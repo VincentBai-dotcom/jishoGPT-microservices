@@ -11,7 +11,7 @@ export class WordEntryService {
   ) {}
 
   async findByID(findByIDDto: FindByIDDto): Promise<WordEntryDocument> {
-    const { wordID, selectedFields } = findByIDDto;
+    const { wordID, selectedFields = [] } = findByIDDto;
     const selectionQuery = selectedFields.reduce(
       (accumulatedQuery, field) => accumulatedQuery + ` +${field}`,
       '',
