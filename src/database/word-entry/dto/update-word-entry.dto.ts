@@ -1,5 +1,4 @@
 import { InputType, Field } from '@nestjs/graphql';
-import { DefinitionSchema, Definition } from '../schemas/definition.schema';
 import { Types } from 'mongoose';
 
 @InputType()
@@ -12,9 +11,6 @@ export class UpdateWordEntryInput {
 
   @Field(() => String)
   readonly pronunciation: string;
-
-  @Field(() => [DefinitionSchema])
-  readonly definitions: Definition[];
 
   @Field(() => String)
   readonly description: string;

@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Definition {
+  tags: [String!]!
+  definition: [String!]!
+}
+
+type WordEntry {
+  _id: String!
+  word: String!
+  pronunciation: String!
+  definitions: [Definition!]!
+  description: String!
+  synonyms: [String!]!
+  usageContext: String!
+  isVerb: Boolean!
+  conjugation: String!
+}
+
+type Query {
+  """Get a word entry by its id"""
+  wordEntryById(
+    """The id of the word entry"""
+    id: String!
+  ): WordEntry!
+}
+
+type Mutation {
+  updateWordEntry(updateWordEntryInput: UpdateWordEntryInput!): WordEntry!
+}
+
+input UpdateWordEntryInput {
+  _id: String!
+  word: String!
+  pronunciation: String!
+  description: String!
+  synonyms: [String!]!
+  usageContext: String!
+  isVerb: Boolean!
+  conjugation: String!
+}
