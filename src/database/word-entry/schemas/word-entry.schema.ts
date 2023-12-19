@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument, Document, Schema as MongooseSchema } from 'mongoose';
+import { HydratedDocument, Document, Types } from 'mongoose';
 import { Definition, DefinitionSchema } from './definition.schema';
 import { ObjectType, Field } from '@nestjs/graphql';
 
@@ -9,7 +9,7 @@ export type WordEntryDocument = HydratedDocument<WordEntry>;
 @ObjectType()
 export class WordEntry extends Document {
   @Field(() => String)
-  _id: MongooseSchema.Types.ObjectId;
+  _id: Types.ObjectId;
 
   @Field(() => String)
   @Prop({ required: true })
@@ -19,7 +19,7 @@ export class WordEntry extends Document {
   @Prop({ required: true })
   pronunciation: string;
 
-  @Field(() => [DefinitionSchema])
+  @Field(() => [Definition])
   @Prop({ type: [DefinitionSchema] })
   definitions: Definition[];
 
@@ -28,11 +28,11 @@ export class WordEntry extends Document {
   description: string;
 
   @Field(() => [String])
-  @Prop({ type: [String], select: false })
+  @Prop({ type: [String] })
   synonyms: string[];
 
   @Field(() => String)
-  @Prop({ select: false })
+  @Prop()
   usageContext: string;
 
   @Field(() => Boolean)
@@ -40,7 +40,7 @@ export class WordEntry extends Document {
   isVerb: boolean;
 
   @Field(() => String)
-  @Prop({ select: false })
+  @Prop()
   conjugation: string;
 }
 
