@@ -23,9 +23,14 @@ export class WordEntryService {
   async updateWordEntry(
     id: Types.ObjectId,
     updateWordEntryInput: UpdateWordEntryInput,
-  ) {
+  ): Promise<WordEntry> {
     try {
-      await this.wordEntryModel.findByIdAndUpdate(id, updateWordEntryInput);
+      const wordEntry = await this.wordEntryModel.findByIdAndUpdate(
+        id,
+        updateWordEntryInput,
+      );
+      if (!wordEntry) throw new BadRequestException('Word entry not found');
+      return wordEntry;
     } catch (err) {
       throw err;
     }

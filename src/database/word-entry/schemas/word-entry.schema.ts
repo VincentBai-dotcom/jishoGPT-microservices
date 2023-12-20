@@ -23,23 +23,23 @@ export class WordEntry extends Document {
   @Prop({ type: [DefinitionSchema] })
   definitions: Definition[];
 
-  @Field(() => String)
-  @Prop({ select: false })
-  description: string;
+  @Field(() => String, { nullable: true })
+  @Prop()
+  description?: string;
 
-  @Field(() => [String])
+  @Field(() => [String], { nullable: true })
   @Prop({ type: [String] })
-  synonyms: string[];
+  synonyms?: string[];
 
-  @Field(() => String)
+  @Field(() => String, { nullable: true })
   @Prop()
-  usageContext: string;
+  usageContext?: string;
 
-  @Field(() => Boolean)
+  @Field(() => Boolean, { nullable: true })
   @Prop()
-  isVerb: boolean;
+  isVerb?: boolean;
 
-  @Field(() => String)
+  @Field(() => String, { nullable: true })
   @Prop()
   conjugation: string;
 }

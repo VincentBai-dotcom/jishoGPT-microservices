@@ -4,26 +4,26 @@ import { Types } from 'mongoose';
 @InputType()
 export class UpdateWordEntryInput {
   @Field(() => String)
-  _id: Types.ObjectId;
+  readonly _id: Types.ObjectId;
 
-  @Field(() => String)
-  readonly word: string;
+  @Field(() => String, { nullable: true })
+  readonly word?: string;
 
-  @Field(() => String)
-  readonly pronunciation: string;
+  @Field(() => String, { nullable: true })
+  readonly pronunciation?: string;
 
-  @Field(() => String)
-  readonly description: string;
+  @Field(() => String, { nullable: true })
+  readonly description?: string;
 
-  @Field(() => [String])
-  readonly synonyms: string[];
+  @Field(() => [String], { nullable: true })
+  readonly synonyms?: string[];
 
-  @Field(() => String)
-  readonly usageContext: string;
+  @Field(() => String, { nullable: true })
+  readonly usageContext?: string;
 
-  @Field(() => Boolean)
-  readonly isVerb: boolean;
+  @Field(() => Boolean, { nullable: true })
+  readonly isVerb?: boolean;
 
-  @Field(() => String)
-  readonly conjugation: string;
+  @Field(() => String, { nullable: true })
+  readonly conjugation?: string;
 }

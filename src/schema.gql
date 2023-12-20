@@ -12,11 +12,11 @@ type WordEntry {
   word: String!
   pronunciation: String!
   definitions: [Definition!]!
-  description: String!
-  synonyms: [String!]!
-  usageContext: String!
-  isVerb: Boolean!
-  conjugation: String!
+  description: String
+  synonyms: [String!]
+  usageContext: String
+  isVerb: Boolean
+  conjugation: String
 }
 
 type Query {
@@ -33,11 +33,11 @@ type Mutation {
 
 input UpdateWordEntryInput {
   _id: String!
-  word: String!
-  pronunciation: String!
-  description: String!
-  synonyms: [String!]!
-  usageContext: String!
-  isVerb: Boolean!
-  conjugation: String!
+  word: String
+  pronunciation: String
+  description: String
+  synonyms: [String!]
+  usageContext: String
+  isVerb: Boolean
+  conjugation: String
 }
