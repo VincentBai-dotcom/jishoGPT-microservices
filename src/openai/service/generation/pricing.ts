@@ -1,5 +1,5 @@
 export const pricing: Record<
-  model,
+  OpenAiModel,
   Record<'inputCost' | 'outputCost', number>
 > = {
   'gpt-4-1106-preview': {

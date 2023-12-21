@@ -15,5 +15,6 @@ import { WordEntryResolver } from './resolver/word-entry.resolver';
   ],
   providers: [WordEntryService, WordEntryResolver],
   controllers: [WordEntryController],
+  exports: [WordEntryService],
 })
 export class WordEntryModule {}
