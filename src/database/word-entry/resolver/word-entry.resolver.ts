@@ -2,7 +2,7 @@ import { Args, Resolver, Query, Mutation } from '@nestjs/graphql';
 import { WordEntry } from '../schemas/word-entry.schema';
 import { WordEntryService } from '../service/word-entry.service';
 import { Types } from 'mongoose';
-import { UpdateWordEntryInput } from '../dto/update-word-entry.dto';
+import { UpdateWordEntryInput } from '../dto/update-word-entry.input';
 
 @Resolver(() => WordEntry)
 export class WordEntryResolver {
@@ -24,9 +24,6 @@ export class WordEntryResolver {
     @Args('updateWordEntryInput')
     updateWordEntryInput: UpdateWordEntryInput,
   ) {
-    return this.wordEntryService.updateWordEntry(
-      updateWordEntryInput._id,
-      updateWordEntryInput,
-    );
+    return this.wordEntryService.updateWordEntry(updateWordEntryInput);
   }
 }

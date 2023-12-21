@@ -2,7 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { WordEntry } from '../schemas/word-entry.schema';
 import { Model, Types } from 'mongoose';
-import { UpdateWordEntryInput } from '../dto/update-word-entry.dto';
+import { UpdateWordEntryInput } from '../dto/update-word-entry.input';
 
 @Injectable()
 export class WordEntryService {
@@ -21,12 +21,11 @@ export class WordEntryService {
   }
 
   async updateWordEntry(
-    id: Types.ObjectId,
     updateWordEntryInput: UpdateWordEntryInput,
   ): Promise<WordEntry> {
     try {
       const wordEntry = await this.wordEntryModel.findByIdAndUpdate(
-        id,
+        updateWordEntryInput._id,
         updateWordEntryInput,
       );
       if (!wordEntry) throw new BadRequestException('Word entry not found');
