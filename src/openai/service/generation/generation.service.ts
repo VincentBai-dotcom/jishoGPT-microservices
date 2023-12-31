@@ -34,8 +34,7 @@ export class GenerationService {
   async sendGenerationRequest(generationOptions) {
     try {
       const completion =
-        await this.openai.completions.create(generationOptions);
-
+        await this.openai.chat.completions.create(generationOptions);
       return completion;
     } catch (err) {
       return undefined;

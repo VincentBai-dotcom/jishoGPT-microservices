@@ -3,7 +3,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { WordEntrySchema } from './schemas/word-entry.schema';
 import { DefinitionSchema } from './schemas/definition.schema';
 import { WordEntryService } from './service/word-entry.service';
-import { WordEntryController } from './controller/word-entry.controller';
 import { WordEntryResolver } from './resolver/word-entry.resolver';
 
 @Module({
@@ -14,7 +13,6 @@ import { WordEntryResolver } from './resolver/word-entry.resolver';
     ]),
   ],
   providers: [WordEntryService, WordEntryResolver],
-  controllers: [WordEntryController],
   exports: [WordEntryService],
 })
 export class WordEntryModule {}

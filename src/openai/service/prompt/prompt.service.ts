@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { systemPrompts } from './systemPrompts';
 @Injectable()
 export class PromptService {
-  getSystemPrompt(promptName: wordContentName): string {
+  getSystemPrompt(promptName: WordContentType): string {
     return systemPrompts[promptName];
   }
 

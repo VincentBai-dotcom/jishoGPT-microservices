@@ -1,10 +1,7 @@
-import { ObjectType, Field, Float } from '@nestjs/graphql';
+import { ObjectType, Field } from '@nestjs/graphql';
 
 @ObjectType()
 export class GenerateWordContentResponse {
   @Field()
   content: string;
-
-  @Field(() => Float)
-  cost: number;
 }
