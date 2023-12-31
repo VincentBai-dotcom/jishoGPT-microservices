@@ -1,7 +1,14 @@
 import { InputType, Field, registerEnumType } from '@nestjs/graphql';
 import { Types } from 'mongoose';
+import { WordContentType } from '../types';
+import { OpenAIModel } from '../types';
 
-registerEnumType(OpenAiModel, {
+registerEnumType(WordContentType, {
+  name: 'WordContentType',
+  description: 'The type of content of a given word',
+});
+
+registerEnumType(OpenAIModel, {
   name: 'OpenAiModel',
   description: 'The model to use for generating the content',
 });

@@ -1,5 +1,7 @@
+import { OpenAIModel } from 'src/openai/types';
+
 export const pricing: Record<
-  OpenAiModel,
+  OpenAIModel,
   Record<'inputCost' | 'outputCost', number>
 > = {
   'gpt-4-1106-preview': {

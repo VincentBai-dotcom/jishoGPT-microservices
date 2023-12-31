@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { systemPrompts } from './systemPrompts';
+import { WordContentType } from 'src/openai/types';
 @Injectable()
 export class PromptService {
   getSystemPrompt(promptName: WordContentType): string {

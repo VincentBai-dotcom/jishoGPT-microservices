@@ -5,6 +5,7 @@ import { wordContentGenerationOptions } from './wordContentGenerationOptions';
 import { Types } from 'mongoose';
 import { PromptService } from '../prompt/prompt.service';
 import { WordEntryService } from 'src/database/word-entry/service/word-entry.service';
+import { WordContentType } from 'src/openai/types';
 
 @Injectable()
 export class GenerationService {

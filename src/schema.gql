@@ -19,6 +19,10 @@ type WordEntry {
   conjugation: String
 }
 
+type GenerateWordContentResponse {
+  content: String!
+}
+
 type Query {
   """Get a word entry by its id"""
   wordEntryById(
@@ -29,6 +33,7 @@ type Query {
 
 type Mutation {
   updateWordEntry(updateWordEntryInput: UpdateWordEntryInput!): WordEntry!
+  generateWordContent(generateWordContentInput: GenerateWordContentInput!): GenerateWordContentResponse!
 }
 
 input UpdateWordEntryInput {
@@ -40,4 +45,23 @@ input UpdateWordEntryInput {
   usageContext: String
   isVerb: Boolean
   conjugation: String
+}
+
+input GenerateWordContentInput {
+  """The id of the word"""
+  wordId: String!
+
+  """The type of content of a given word"""
+  wordContentType: WordContentType!
+}
+
+"""The type of content of a given word"""
+enum WordContentType {
+  Description
+  PopCulture
+  Epistemology
+  Synonym
+  Antonym
+  UsageContext
+  Conjugation
 }
